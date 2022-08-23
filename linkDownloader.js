@@ -7,15 +7,7 @@ bot.start(ctx => {
     console.log(ctx.message.from);
     ctx.reply("Hi");
 })
-
-
-
-
-
-
-
-
-bot.hears(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/, async ctx => {
+bot.hears(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/, ctx => {
     ctx.reply("you sent a link");
     let file ;
     const request = http.get(ctx.update.message.text, function (response) {
